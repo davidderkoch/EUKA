@@ -222,7 +222,7 @@
         }
 
         .card:hover {
-            transform: scale(1.03);
+            transform: scale(1.1);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
         }
 
@@ -235,6 +235,12 @@
         .card p {
             color: var(--gray);
         }
+
+        .contact-grid .card:hover {
+        transform: none;
+        box-shadow: none;
+        }
+
 
         form {
             display: flex;
@@ -325,6 +331,14 @@
         .footer-links a:hover {
         text-decoration: underline;
         }
+        .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+
 
         /* Responsive Design */
         @media (max-width: 1024px) {
@@ -425,30 +439,46 @@
 
     <!-- Über uns -->
     <section id="about">
-        <h2>Über EUKA</h2>
-        <p class="text-center max-w-2xl mx-auto">
-            EUKA steht für hochwertige Silikonarbeiten. Mit Expertise und Sorgfalt bieten wir langlebige Lösungen für Badezimmer, Küchen und Fassaden, die höchsten Standards entsprechen.
+        <h2>Über EUKA Versiegelungstechnik</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto;">
+            EUKA Versiegelungstechnik steht für hochwertige Silikonarbeiten mit einem hohen Anspruch an Langlebigkeit und Präzision. 
+            Unser Team schafft nicht nur klassische Abdichtungen für Bad, Küche und Fassade, sondern setzt auch auf barrierefreie, moderne Lösungen 
+            für altersgerechte und inklusive Badezimmer. Dabei arbeiten wir streng nach den anerkannten Regeln der Technik und führen alle Leistungen 
+            gemäß den Vorgaben der VOB (Vergabe- und Vertragsordnung für Bauleistungen) aus.
         </p>
     </section>
+    
 
     <!-- Beispielarbeiten -->
     <section id="services">
-        <h2>Unsere Leistungen</h2>
         <div class="services-grid">
-            <div class="card">
-                <h3>Badezimmerabdichtung</h3>
-                <p>Präzise Silikonfugen für Duschen und Badewannen, die Wasser und Schimmel fernhalten.</p>
+            <div class="card service-card">
+                <h3>Fugensanierung</h3>
+                <p>Alte Silikonfugen werden sauber entfernt und fachgerecht erneuert – für dauerhafte Hygiene und Schutz.</p>
             </div>
-            <div class="card">
-                <h3>Küchenfugen</h3>
-                <p>Hygienische und ästhetische Silikonarbeiten für Spülen und Arbeitsplatten.</p>
+            <div class="card service-card">
+                <h3>Abdichtungen</h3>
+                <p>Perfekte Silikonfugen für Bad, Dusche, Schwimmbad und viele weitere Anwendungsbereiche im Innen- und Außenbereich.</p>
             </div>
-            <div class="card">
-                <h3>Fassadenabdichtung</h3>
-                <p>Wetterfeste Fugen für Fenster und Fassaden, die Energieeffizienz steigern.</p>
+            <div class="card service-card">
+                <h3>Ästhetische Lösungen</h3>
+                <p>Präzise Silikonarbeiten für Fenster, Türen, Küchen und mehr – technisch sauber und optisch ansprechend.</p>
             </div>
-        </div>
+            <div class="card service-card">
+                <h3>Glasversiegelung</h3>
+                <p>Wir schützen Glas dauerhaft vor Schmutz, Kalk und Wasserflecken – für klare Sicht und leichtere Reinigung im Alltag.</p>
+            </div>
+            <div class="card service-card">
+                <h3>Spezialfugen</h3>
+                <p>Abdichtungen für Wohnmobile, Boote, Naturstein wie Marmor oder Granit sowie schnelle Reparaturmaßnahmen.</p>
+            </div>
+            <div class="card service-card">
+                <h3>Industrielle Anwendungen</h3>
+                <p>PU-Fugen, befahrbare Fugen, Brandschutzfugen und weitere Lösungen für gewerbliche und industrielle Anforderungen.</p>
+            </div>
+        </div>        
     </section>
+    
 
     <!-- Kontakt -->
     <section id="contact">
@@ -466,21 +496,23 @@
                 <button type="submit" id="submit-button" disabled>Nachricht senden</button>
               </form>              
             <!-- Kontaktdaten -->
+            <!-- Kontaktdaten -->
             <div class="card">
                 <h3>Kontaktdaten</h3>
-                <p><strong>EUKA Silikonarbeiten</strong></p>
-                <p>Musterstraße 123, 12345 Musterstadt</p>
-                <p>Telefon: +49 123 456789</p>
-                <p>E-Mail: info@euka-silikon.de</p>
+                <p><strong>EUKA Versiegelungstechnik</strong></p>
+                <p>Eugen Karpez</p>
+                <p>Ernethof 2, 77933 Lahr</p>
+                <p>Telefon: +49 176 82059876</p>
+                <p>E-Mail: euka77933lahr@gmail.com</p> <!-- Noch nicht im Formular hinterlegt -->
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>© 2025 EUKA Silikonarbeiten. Alle Rechte vorbehalten.</p>
+        <p>© 2025 EUKA Versiegelungstechnik. Alle Rechte vorbehalten.</p>
         <div class="footer-links">
-          <a href="datenschutz.html">Datenschutzerklärung</a>
+          <a href="datenschutz.html">Datenschutz</a>
           <span>|</span>
           <a href="impressum.html">Impressum</a>
         </div>
