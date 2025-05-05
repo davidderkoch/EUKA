@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Empfängeradresse
-    $to = "derschuler265@gmail.com"; // Zieladresse anpassen
+    $to = "d.koch@julabo.com"; // Zieladresse anpassen
 
     // E-Mail-Betreff
     $subject = "Neue Nachricht von $name über EUKA Kontaktformular";
