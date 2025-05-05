@@ -455,16 +455,16 @@
         <h2>Kontaktieren Sie uns</h2>
         <div class="contact-grid">
             <!-- Kontaktformular -->
-            <form class="card" id="contact-form" action="sendmail.php" method="POST">
-                <input type="text" id="name" name="name" placeholder="Name" required>
-                <input type="email" id="email" name="email" placeholder="E-Mail" required>
-                <textarea id="message" name="message" rows="5" placeholder="Ihre Nachricht" required></textarea>
+            <form action="https://formsubmit.co/deine@email.de" method="POST" class="card">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="E-Mail" required>
+                <textarea name="message" rows="5" placeholder="Ihre Nachricht" required></textarea>
                 <label class="checkbox-label">
-                    <input type="checkbox" id="privacy-agreement" name="privacy-agreement">
-                    Haben Sie die <a href="datenschutz.html">Datenschutzvereinbarung</a> am Ende der Seite gelesen?
+                  <input type="checkbox" id="privacy-agreement" name="privacy-agreement">
+                  Haben Sie die <a href="datenschutz.html">Datenschutzvereinbarung</a> am Ende der Seite gelesen?
                 </label>
                 <button type="submit" id="submit-button" disabled>Nachricht senden</button>
-            </form>
+              </form>              
             <!-- Kontaktdaten -->
             <div class="card">
                 <h3>Kontaktdaten</h3>
