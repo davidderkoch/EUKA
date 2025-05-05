@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EUKA - Silikonarbeiten</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Futura+PT:wght@900&family=Poppins:wght@400;700;900&display=swap">
     <style>
         :root {
             --black: #000000;
@@ -74,48 +74,72 @@
         .logo {
             display: flex;
             align-items: center;
+            justify-content: center;
             font-size: 5rem;
             font-weight: 900;
-            letter-spacing: 0.1em;
             z-index: 1;
+            position: relative;
+        }
+
+        .logo span {
+            font-family: 'Futura PT', sans-serif;
+            font-weight: 900;
+            display: inline-block;
         }
 
         #eu {
             color: var(--light-gray);
             animation: slideInLeft 6s ease-in-out infinite;
+            transform-origin: center;
         }
 
         #ka {
             color: var(--white);
             animation: slideInRight 6s ease-in-out infinite;
+            transform-origin: center;
         }
 
         #bau {
-            font-size: 1rem;
+            font-size: 0.8rem;
             color: var(--light-gray);
             animation: fadeInBau 6s ease-in-out infinite;
-            margin: 0 0.5rem;
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
         @keyframes slideInLeft {
-            0% { transform: translateX(-50vw); opacity: 0; }
-            25% { transform: translateX(0); opacity: 1; }
-            75% { transform: translateX(0); opacity: 1; } /* Pause */
-            100% { transform: translateX(-50vw); opacity: 0; }
+            0% { transform: translateX(-50vw) scaleY(1); opacity: 0; }
+            24% { transform: translateX(-15px) scaleY(1.1); opacity: 1; }
+            25% { transform: translateX(-15px) scaleY(1.1); opacity: 1; }
+            26% { transform: translateX(-17px) scaleY(1.1); }
+            27% { transform: translateX(-13px) scaleY(1.1); }
+            28% { transform: translateX(-16px) scaleY(1.1); }
+            29% { transform: translateX(-14px) scaleY(1.1); }
+            30% { transform: translateX(-15px) scaleY(1.1); opacity: 1; }
+            75% { transform: translateX(-15px) scaleY(1.1); opacity: 1; }
+            100% { transform: translateX(-50vw) scaleY(1); opacity: 0; }
         }
 
         @keyframes slideInRight {
-            0% { transform: translateX(50vw); opacity: 0; }
-            25% { transform: translateX(0); opacity: 1; }
-            75% { transform: translateX(0); opacity: 1; } /* Pause */
-            100% { transform: translateX(50vw); opacity: 0; }
+            0% { transform: translateX(50vw) scaleY(1); opacity: 0; }
+            24% { transform: translateX(15px) scaleY(1.1); opacity: 1; }
+            25% { transform: translateX(15px) scaleY(1.1); opacity: 1; }
+            26% { transform: translateX(17px) scaleY(1.1); }
+            27% { transform: translateX(13px) scaleY(1.1); }
+            28% { transform: translateX(16px) scaleY(1.1); }
+            29% { transform: translateX(14px) scaleY(1.1); }
+            30% { transform: translateX(15px) scaleY(1.1); opacity: 1; }
+            75% { transform: translateX(15px) scaleY(1.1); opacity: 1; }
+            100% { transform: translateX(50vw) scaleY(1); opacity: 0; }
         }
 
         @keyframes fadeInBau {
-            0% { opacity: 0; transform: scale(0.5); }
-            25% { opacity: 1; transform: scale(1); }
-            75% { opacity: 1; transform: scale(1); } /* Pause */
-            100% { opacity: 0; transform: scale(0.5); }
+            0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+            25% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+            75% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+            100% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
         }
 
         /* Animation für den Slogan */
@@ -130,7 +154,7 @@
 
         @keyframes colorWave {
             0%, 75%, 100% { color: var(--light-gray); }
-            10% { color: var(--highlight-gray); } /* Highlight-Zeitpunkt */
+            10% { color: var(--highlight-gray); }
         }
 
         /* Verzögerung für jeden Buchstaben */
@@ -244,9 +268,23 @@
             transition: background 0.3s ease, transform 0.3s ease;
         }
 
-        button:hover {
+        button:disabled {
+            background: var(--gray);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        button:hover:not(:disabled) {
             background: var(--gray);
             transform: scale(1.05);
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--gray);
         }
 
         footer {
@@ -256,6 +294,38 @@
             padding: 2rem;
         }
 
+        footer a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+        footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #000; /* oder was auch immer dein Hintergrund ist */
+        color: #fff;
+        }
+
+        .footer-links {
+        margin-top: 10px;
+        }
+
+        .footer-links a,
+        .footer-links span {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 8px;
+        font-size: 0.9em;
+        }
+
+        .footer-links a:hover {
+        text-decoration: underline;
+        }
+
         /* Responsive Design */
         @media (max-width: 1024px) {
             .logo {
@@ -263,7 +333,7 @@
             }
 
             #bau {
-                font-size: 0.8rem;
+                font-size: 0.7rem;
             }
 
             h1 {
@@ -344,9 +414,9 @@
     <!-- Header mit Logo-Animation -->
     <header>
         <div class="logo">
-            <span id="eu">EU</span>
+            <span id="eu">eu</span>
             <span id="bau">bau</span>
-            <span id="ka">KA</span>
+            <span id="ka">ka</span>
         </div>
         <h1 class="slogan">
             <span>S</span><span>i</span><span>l</span><span>i</span><span>k</span><span>o</span><span>n</span><span>a</span><span>r</span><span>b</span><span>e</span><span>i</span><span>t</span><span>e</span><span>n</span><span> </span><span>m</span><span>i</span><span>t</span><span> </span><span>P</span><span>r</span><span>ä</span><span>z</span><span>i</span><span>s</span><span>i</span><span>o</span><span>n</span>
@@ -385,11 +455,15 @@
         <h2>Kontaktieren Sie uns</h2>
         <div class="contact-grid">
             <!-- Kontaktformular -->
-            <form class="card" id="contact-form">
-                <input type="text" id="name" placeholder="Name" required>
-                <input type="email" id="email" placeholder="E-Mail" required>
-                <textarea id="message" rows="5" placeholder="Ihre Nachricht" required></textarea>
-                <button type="submit">Nachricht senden</button>
+            <form class="card" id="contact-form" action="send_mail.php" method="POST">
+                <input type="text" id="name" name="name" placeholder="Name" required>
+                <input type="email" id="email" name="email" placeholder="E-Mail" required>
+                <textarea id="message" name="message" rows="5" placeholder="Ihre Nachricht" required></textarea>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="privacy-agreement" name="privacy-agreement">
+                    Haben Sie die <a href="datenschutz.html">Datenschutzvereinbarung</a> am Ende der Seite gelesen?
+                </label>
+                <button type="submit" id="submit-button" disabled>Nachricht senden</button>
             </form>
             <!-- Kontaktdaten -->
             <div class="card">
@@ -405,16 +479,14 @@
     <!-- Footer -->
     <footer>
         <p>© 2025 EUKA Silikonarbeiten. Alle Rechte vorbehalten.</p>
-    </footer>
-
+        <div class="footer-links">
+          <a href="datenschutz.html">Datenschutzerklärung</a>
+          <span>|</span>
+          <a href="impressum.html">Impressum</a>
+        </div>
+      </footer>      
+    
     <script>
-        // Kontaktformular-Handler
-        document.getElementById('contact-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Nachricht wird gesendet (serverseitige Implementierung erforderlich)');
-            e.target.reset();
-        });
-
         // Scroll-Animation für Abschnitte
         const sections = document.querySelectorAll('section');
         const observer = new IntersectionObserver((entries) => {
@@ -426,6 +498,14 @@
         }, { threshold: 0.1 });
 
         sections.forEach(section => observer.observe(section));
+
+        // Aktiviere/Deaktiviere den Senden-Button basierend auf der Checkbox
+        const checkbox = document.getElementById('privacy-agreement');
+        const submitButton = document.getElementById('submit-button');
+
+        checkbox.addEventListener('change', () => {
+            submitButton.disabled = !checkbox.checked;
+        });
     </script>
 </body>
-</html>
+</html
