@@ -395,8 +395,8 @@
         }
 
         @media (max-width: 1024px) {
-            .logo { font-size: 4rem; }
-            #bau { font-size: 0.7rem; }
+            .logo { font-size: 5rem; }
+            #bau { font-size: 0.8rem; }
             h1 { font-size: 2.25rem; }
             h2 { font-size: 1.75rem; }
             .home-section::after { height: 40px; }
@@ -412,13 +412,13 @@
         }
 
         @media (max-width: 768px) {
-            .logo { font-size: 3rem; }
-            #bau { font-size: 0.6rem; }
+            .logo { font-size: 5.5rem; }
+            #bau { font-size: 0.9rem; top: 58%; }
             h1 { font-size: 2rem; }
             h2 { font-size: 1.5rem; }
             .section, .contact-section, .contact-details-section { padding: 3rem 1rem; }
             .home-section::after { height: 30px; }
-            footer { padding: 2.5rem 1rem; }
+            footer { padding: 3rem 1rem 5rem; }
             footer p { font-size: 1rem; }
             .footer-links a { font-size: 0.9rem; }
             .footer-links span { font-size: 0.9rem; }
@@ -431,15 +431,15 @@
         }
 
         @media (max-width: 480px) {
-            .logo { font-size: 2.5rem; }
-            #bau { font-size: 0.5rem; }
+            .logo { font-size: 4.5rem; }
+            #bau { font-size: 0.7rem; top: 60%; }
             h1 { font-size: 1.75rem; }
             h2 { font-size: 1.25rem; }
             input, textarea, button { font-size: 1rem; padding: 0.75rem; }
             .contact-details h3 { font-size: 1.25rem; }
             .contact-details p { font-size: 1rem; }
             .home-section::after { height: 20px; }
-            footer { padding: 3rem 1rem; }
+            footer { padding: 3rem 1rem 6rem; }
             footer p { font-size: 0.9rem; }
             .footer-links a { font-size: 0.8rem; }
             .footer-links span { font-size: 0.8rem; }
@@ -449,17 +449,43 @@
             .contact-details { margin-bottom: 11rem; }
             .about-section { padding-right: 30px; }
             .fp-watermark { font-size: 0.6rem !important; bottom: 6px !important; }
-        }
-        @media (max-width: 768px) {
-            footer {
-                    padding-top: 3rem;
-                    padding-bottom: 5rem; /* deutlich höher */
+            @keyframes slideInLeft {
+                0% { transform: translateX(-40vw) scaleY(1); opacity: 0; }
+                24% { transform: translateX(-15px) scaleY(1.1); opacity: 1; }
+                25% { transform: translateX(-15px) scaleY(1.1); opacity: 1; }
+                26% { transform: translateX(-17px) scaleY(1.1); }
+                27% { transform: translateX(-13px) scaleY(1.1); }
+                28% { transform: translateX(-16px) scaleY(1.1); }
+                29% { transform: translateX(-14px) scaleY(1.1); }
+                30% { transform: translateX(-15px) scaleY(1.1); opacity: 1; }
+                75% { transform: translateX(-15px) scaleY(1.1); opacity: 1; }
+                100% { transform: translateX(-40vw) scaleY(1); opacity: 0; }
+            }
+            @keyframes slideInRight {
+                0% { transform: translateX(40vw) scaleY(1); opacity: 0; }
+                24% { transform: translateX(15px) scaleY(1.1); opacity: 1; }
+                25% { transform: translateX(15px) scaleY(1.1); opacity: 1; }
+                26% { transform: translateX(17px) scaleY(1.1); }
+                27% { transform: translateX(13px) scaleY(1.1); }
+                28% { transform: translateX(16px) scaleY(1.1); }
+                29% { transform: translateX(14px) scaleY(1.1); }
+                30% { transform: translateX(15px) scaleY(1.1); opacity: 1; }
+                75% { transform: translateX(15px) scaleY(1.1); opacity: 1; }
+                100% { transform: translateX(40vw) scaleY(1); opacity: 0; }
             }
         }
+
+        @media (max-width: 768px) {
+            footer {
+                padding-top: 3rem;
+                padding-bottom: 5rem;
+            }
+        }
+
         @media (max-width: 480px) {
             footer {
                 padding-top: 3rem;
-                padding-bottom: 6rem; /* noch mehr Abstand nach unten */
+                padding-bottom: 6rem;
             }
         }
     </style>
@@ -514,19 +540,18 @@
         <section class="section contact-section">
             <h2>Kontaktieren Sie uns</h2>
             <div class="form-wrapper">
-                <form action="https://formsubmit.co/derschuler265@gmail.com" method="POST">
+                <form action="https://formsubmit.co/euka77933lahr@gmail.com" method="POST">
                     <input type="text" name="name" placeholder="Name" required>
-                <input type="email" name="email" placeholder="E-Mail" required>
-                <textarea name="message" rows="5" placeholder="Ihre Nachricht" required></textarea>
-                <label class="checkbox-label">
-                    <input type="checkbox" id="privacy-agreement" name="privacy-agreement">
-                    Haben Sie die <a href="datenschutz.html">Datenschutzvereinbarung</a> gelesen?
-                </label>
-                <button type="submit" id="submit-button" disabled>Nachricht senden</button>
+                    <input type="email" name="email" placeholder="E-Mail" required>
+                    <textarea name="message" rows="5" placeholder="Ihre Nachricht" required></textarea>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="privacy-agreement" name="privacy-agreement">
+                        Haben Sie die <a href="datenschutz.html">Datenschutzvereinbarung</a> gelesen?
+                    </label>
+                    <button type="submit" id="submit-button" disabled>Nachricht senden</button>
                 </form>
             </div>
         </section>
-        
         <section class="section contact-details-section">
             <div class="contact-details">
                 <h3>Kontaktdaten</h3>
