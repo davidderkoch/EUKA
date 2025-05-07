@@ -345,7 +345,7 @@
             background: var(--black);
             color: var(--white);
             text-align: center;
-            padding: 1.5rem 1rem;
+            padding: 1.5rem 0;
             border-top: 2px solid var(--light-gray);
             font-family: 'Poppins', sans-serif;
         }
@@ -450,6 +450,18 @@
             .about-section { padding-right: 30px; }
             .fp-watermark { font-size: 0.6rem !important; bottom: 6px !important; }
         }
+        @media (max-width: 768px) {
+            footer {
+                    padding-top: 3rem;
+                    padding-bottom: 5rem; /* deutlich höher */
+            }
+        }
+        @media (max-width: 480px) {
+            footer {
+                padding-top: 3rem;
+                padding-bottom: 6rem; /* noch mehr Abstand nach unten */
+            }
+        }
     </style>
 </head>
 <body>
@@ -501,8 +513,9 @@
         </section>
         <section class="section contact-section">
             <h2>Kontaktieren Sie uns</h2>
-            <form action="https://formsubmit.co/derschuler265@gmail.com" method="POST">
-                <input type="text" name="name" placeholder="Name" required>
+            <div class="form-wrapper">
+                <form action="https://formsubmit.co/derschuler265@gmail.com" method="POST">
+                    <input type="text" name="name" placeholder="Name" required>
                 <input type="email" name="email" placeholder="E-Mail" required>
                 <textarea name="message" rows="5" placeholder="Ihre Nachricht" required></textarea>
                 <label class="checkbox-label">
@@ -510,8 +523,10 @@
                     Haben Sie die <a href="datenschutz.html">Datenschutzvereinbarung</a> gelesen?
                 </label>
                 <button type="submit" id="submit-button" disabled>Nachricht senden</button>
-            </form>
+                </form>
+            </div>
         </section>
+        
         <section class="section contact-details-section">
             <div class="contact-details">
                 <h3>Kontaktdaten</h3>
