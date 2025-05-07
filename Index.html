@@ -248,6 +248,16 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
+        @keyframes zoomInDown {
+            0% { opacity: 0; transform: translateY(-30px) scale(0.8); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        @keyframes slideUpFade {
+            0% { opacity: 0; transform: translateY(50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
         .service-section.active h2 {
             animation: fadeInDown 0.8s ease-out forwards;
         }
@@ -257,8 +267,19 @@
             animation-delay: 0.3s;
         }
 
+        .about-section.active h2 {
+            animation: zoomInDown 0.8s ease-out forwards;
+        }
+
+        .about-section.active p {
+            animation: slideUpFade 0.8s ease-out forwards;
+            animation-delay: 0.3s;
+        }
+
         .service-section h2,
-        .service-section p {
+        .service-section p,
+        .about-section h2,
+        .about-section p {
             opacity: 0;
         }
 
@@ -620,10 +641,10 @@
             navigationTooltips: ['', '', '', '', '', '', '', '', '', ''],
             showActiveTooltip: true,
             afterLoad: function(origin, destination, direction) {
-                document.querySelectorAll('.service-section').forEach(section => {
+                document.querySelectorAll('.service-section, .about-section').forEach(section => {
                     section.classList.remove('active');
                 });
-                if (destination.item.classList.contains('service-section')) {
+                if (destination.item.classList.contains('service-section') || destination.item.classList.contains('about-section')) {
                     destination.item.classList.add('active');
                 }
             }
