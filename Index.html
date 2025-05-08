@@ -512,7 +512,9 @@
             #bau { font-size: 0.7rem; }
             h1 { font-size: 2.25rem; }
             h2 { font-size: 1.75rem; }
-            .home-section::after { height: 40px; }
+            .home-section::after { 
+                height: 60px; 
+            }
             .service-section h2 { font-size: 2.25rem; }
             .service-section p { font-size: 1.1rem; }
             footer { padding: 2rem 1rem; }
@@ -539,7 +541,13 @@
             h1 { font-size: 2rem; }
             h2 { font-size: 1.5rem; }
             .section, .contact-section, .contact-details-section { padding: 3rem 1rem; }
-            .home-section::after { height: 30px; }
+            .home-section::after { 
+                height: 50px; 
+            }
+            @keyframes waveTransition {
+                0%, 100% { clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%); }
+                50% { clip-path: polygon(0 100%, 100% 10%, 100% 100%, 0 100%); }
+            }
             footer { padding: 3rem 1rem 5rem; }
             footer p { font-size: 1rem; }
             .footer-links a { font-size: 0.9rem; }
@@ -590,7 +598,13 @@
             h2 { font-size: 1.25rem; }
             .contact-details h3 { font-size: 1.25rem; }
             .contact-details p { font-size: 1rem; }
-            .home-section::after { height: 20px; }
+            .home-section::after { 
+                height: 40px; 
+            }
+            @keyframes waveTransition {
+                0%, 100% { clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%); }
+                50% { clip-path: polygon(0 100%, 100% 5%, 100% 100%, 0 100%); }
+            }
             footer { padding: 3rem 1rem 6rem; }
             footer p { font-size: 0.9rem; }
             .footer-links a { font-size: 0.8rem; }
