@@ -426,7 +426,6 @@
         .contact-details-section {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
             min-height: 100vh;
             padding: 4rem 1rem;
             text-align: center;
@@ -435,7 +434,7 @@
 
         .contact-details {
             max-width: 500px;
-            margin: 0 auto 8rem;
+            margin: 0 auto;
         }
 
         .contact-details h3 {
@@ -448,6 +447,38 @@
             font-size: 1.1rem;
             color: var(--gray);
             margin-bottom: 0.5rem;
+        }
+
+        .contact-details-section-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            flex-grow: 1;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .euka-logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+            width: 100%;
+        }
+
+        .euka-logo {
+            max-width: 200px;
+            max-height: 200px;
+            width: auto;
+            height: auto;
+            opacity: 0;
+        }
+
+        .contact-details-section.active .euka-logo {
+            animation: fadeInUp 0.8s ease-out forwards;
+            animation-delay: 1.2s;
         }
 
         footer {
@@ -521,7 +552,7 @@
             footer p { font-size: 1.1rem; }
             .footer-links a { font-size: 1rem; }
             .footer-links span { font-size: 1rem; }
-            .contact-details { margin-bottom: 9rem; }
+            .euka-logo { max-width: 180px; max-height: 180px; }
             .about-section { padding-right: 50px; }
             .fp-watermark { font-size: 0.8rem !important; }
             .cta-buttons {
@@ -555,7 +586,7 @@
             .service-section { padding-left: 3rem; padding-right: 3rem; }
             .service-section h2 { font-size: 2rem; }
             .service-section p { font-size: 1rem; margin: 0 1rem; }
-            .contact-details { margin-bottom: 10rem; }
+            .euka-logo { max-width: 150px; max-height: 150px; }
             .about-section { padding-right: 40px; }
             .fp-watermark { font-size: 0.7rem !important; bottom: 8px !important; }
             form {
@@ -612,7 +643,7 @@
             .service-section { padding-left: 2rem; padding-right: 2rem; }
             .service-section h2 { font-size: 1.75rem; }
             .service-section p { font-size: 0.9rem; margin: 0 0.5rem; }
-            .contact-details { margin-bottom: 11rem; }
+            .euka-logo { max-width: 120px; max-height: 120px; }
             .about-section { padding-right: 30px; }
             .fp-watermark { font-size: 0.6rem !important; bottom: 6px !important; }
             form {
@@ -719,13 +750,18 @@
             </div>
         </section>
         <section class="section contact-details-section">
-            <div class="contact-details">
-                <h3>Kontaktdaten</h3>
-                <p><strong>EUKA Versiegelungstechnik</strong></p>
-                <p>Eugen Karpez</p>
-                <p>Ernethof 2, 77933 Lahr</p>
-                <p>Telefon: +49 176 82059876</p>
-                <p>E-Mail: euka77933lahr@gmail.com</p>
+            <div class="contact-details-section-content">
+                <div class="contact-details">
+                    <h3>Kontaktdaten</h3>
+                    <p><strong>EUKA Versiegelungstechnik</strong></p>
+                    <p>Eugen Karpez</p>
+                    <p>Ernethof 2, 77933 Lahr</p>
+                    <p>Telefon: +49 176 82059876</p>
+                    <p>E-Mail: euka77933lahr@gmail.com</p>
+                </div>
+                <div class="euka-logo-container">
+                    <img src="eukalogo.png" alt="EUKA Logo" class="euka-logo">
+                </div>
             </div>
             <footer>
                 <p>© 2025 EUKA Versiegelungstechnik. Alle Rechte vorbehalten.</p>
