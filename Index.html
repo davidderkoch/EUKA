@@ -80,6 +80,7 @@
 
         .logo {
             display: flex;
+            align-content: center;
             align-items: center;
             justify-content: center;
             font-size: 5rem;
@@ -458,6 +459,7 @@
             width: 100%;
             max-width: 500px;
             margin: 0 auto;
+            min-height: calc(100vh - 100px); /* Ensure enough height for content and footer */
         }
 
         .euka-logo-container {
@@ -571,7 +573,11 @@
             #bau { font-size: 0.6rem; }
             h1 { font-size: 2rem; }
             h2 { font-size: 1.5rem; }
-            .section, .contact-section, .contact-details-section { padding: 3rem 1rem; }
+            .section, .contact-section { padding: 3rem 1rem; }
+            .contact-details-section {
+                padding: 3rem 1rem 4rem; /* Adjusted padding to ensure footer stays at bottom */
+                min-height: 100vh;
+            }
             .home-section::after { 
                 height: 50px; 
             }
@@ -579,7 +585,12 @@
                 0%, 100% { clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%); }
                 50% { clip-path: polygon(0 100%, 100% 10%, 100% 100%, 0 100%); }
             }
-            footer { padding: 3rem 1rem 5rem; }
+            footer {
+                padding: 1.5rem 1rem; /* Reduced padding to keep footer lower */
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+            }
             footer p { font-size: 1rem; }
             .footer-links a { font-size: 0.9rem; }
             .footer-links span { font-size: 0.9rem; }
@@ -620,6 +631,9 @@
                 padding: 0.3rem 0.6rem;
                 font-size: 0.7rem;
             }
+            .contact-details-section-content {
+                min-height: calc(100vh - 80px); /* Adjusted for smaller footer */
+            }
         }
 
         @media (max-width: 480px) {
@@ -636,7 +650,12 @@
                 0%, 100% { clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%); }
                 50% { clip-path: polygon(0 100%, 100% 5%, 100% 100%, 0 100%); }
             }
-            footer { padding: 3rem 1rem 6rem; }
+            footer {
+                padding: 1.2rem 1rem; /* Further reduced padding */
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+            }
             footer p { font-size: 0.9rem; }
             .footer-links a { font-size: 0.8rem; }
             .footer-links span { font-size: 0.8rem; }
@@ -675,6 +694,13 @@
             .cta-button {
                 padding: 0.2rem 0.5rem;
                 font-size: 0.6rem;
+            }
+            .contact-details-section {
+                padding: 3rem 1rem 3.5rem; /* Adjusted padding */
+                min-height: 100vh;
+            }
+            .contact-details-section-content {
+                min-height: calc(100vh - 70px); /* Adjusted for smaller footer */
             }
         }
     </style>
@@ -740,7 +766,7 @@
                 <form action="https://formsubmit.co/euka77933lahr@gmail.com" method="POST">
                     <input type="text" name="name" placeholder="Name" required>
                     <input type="email" name="email" placeholder="E-Mail" required>
-                    <textarea name="message" rows="5" placeholder="Ihre Nachricht" required></textarea>
+                    <textarea name="message" rows="3" placeholder="Ihre Nachricht" required></textarea>
                     <label class="checkbox-label">
                         <input type="checkbox" id="privacy-agreement" name="privacy-agreement">
                         Haben Sie die <a href="datenschutz.html">Datenschutzvereinbarung</a> gelesen?
