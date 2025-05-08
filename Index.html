@@ -540,6 +540,15 @@
             text-decoration: none !important;
         }
 
+        @media (max-width: 480px) {
+            footer {
+                padding: 2.2rem 1rem 3.5rem; /* oben, seitlich, unten */
+                min-height: 100px;
+                position: relative; /* besser als absolute bei sticky Safari-UI */
+            }
+        }
+
+
         @media (max-width: 1024px) {
             .logo { font-size: 4rem; }
             #bau { font-size: 0.7rem; }
