@@ -151,7 +151,10 @@
         }
 
         .slogan {
+            font-size: 2.2rem;
+            line-height: 1.4;
             display: inline-block;
+            white-space: nowrap;
             z-index: 2;
         }
 
@@ -431,7 +434,7 @@
             padding: 4rem 1rem;
             text-align: center;
             position: relative;
-            padding-bottom:20rem;
+            padding-bottom: 20rem;
         }
 
         .contact-details {
@@ -491,6 +494,29 @@
             animation-delay: 1.2s;
         }
 
+        .logo-wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slogan-wrapper {
+            position: absolute;
+            top: calc(50% + 4rem);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            z-index: 2;
+            text-align: center;
+            pointer-events: none;
+        }
+
         footer {
             position: absolute;
             bottom: 0;
@@ -530,37 +556,6 @@
             color: var(--white);
             transform: translateY(-2px);
         }
-        .logo-wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.slogan-wrapper {
-    position: absolute;
-    top: calc(50% + 4rem); /* Abstand unterhalb des Logos */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    z-index: 2;
-    text-align: center;
-    pointer-events: none;
-}
-
-.slogan {
-    font-size: 2.2rem;
-    line-height: 1.4;
-    display: inline-block;
-    white-space: nowrap;
-}
-
-
 
         .footer-links span {
             color: var(--light-gray);
@@ -588,6 +583,7 @@
             .home-section::after { 
                 height: 60px; 
             }
+            .slogan { font-size: 2rem; }
             .service-section h2 { font-size: 2.25rem; }
             .service-section p { font-size: 1.1rem; }
             footer { 
@@ -622,6 +618,8 @@
             #bau { font-size: 0.6rem; }
             h1 { font-size: 2rem; }
             h2 { font-size: 1.5rem; }
+            .slogan { font-size: 1.5rem; }
+            .slogan-wrapper { top: calc(50% + 3rem); }
             .section, .contact-section { padding: 3rem 1rem; }
             .contact-details-section {
                 padding: 3rem 1rem;
@@ -691,6 +689,8 @@
             #bau { font-size: 0.5rem; }
             h1 { font-size: 1.75rem; }
             h2 { font-size: 1.25rem; }
+            .slogan { font-size: 1.2rem; }
+            .slogan-wrapper { top: calc(50% + 2.5rem); }
             .contact-details h3 { font-size: 1.25rem; }
             .contact-details p { font-size: 1rem; }
             .home-section::after { 
@@ -772,10 +772,9 @@
             </div>
             <div class="slogan-wrapper">
                 <h1 class="slogan">
-                    <span>S</span><span>i</span><span>l</span><span>i</span><span>k</span><span>o</span><span>n</span><span>a</span><span>r</span><span>b</span><span>e</span><span>i</span><span>t</span><span>e</span><span>n</span><span>&nbsp;</span><span>m</span><span>i</span><span>t</span><span>&nbsp;</span><span>P</span><span>r</span><span>ä</span><span>z</span><span>i</span><span>s</span><span>i</span><span>o</span><span>n</span>
+                    <span>S</span><span>i</span><span>l</span><span>i</span><span>k</span><span>o</span><span>n</span><span>a</span><span>r</span><span>b</span><span>e</span><span>i</span><span>t</span><span>e</span><span>n</span><span> </span><span>m</span><span>i</span><span>t</span><span> </span><span>P</span><span>r</span><span>ä</span><span>z</span><span>i</span><span>s</span><span>i</span><span>o</span><span>n</span>
                 </h1>
             </div>
-            
         </section>
         <section class="section about-section">
             <div style="max-width: 90%; margin: 2rem auto;">
