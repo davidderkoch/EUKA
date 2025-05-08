@@ -431,7 +431,7 @@
             padding: 4rem 1rem;
             text-align: center;
             position: relative;
-            padding-bottom: 25rem;
+            padding-bottom:20rem;
         }
 
         .contact-details {
@@ -530,6 +530,37 @@
             color: var(--white);
             transform: translateY(-2px);
         }
+        .logo-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slogan-wrapper {
+    position: absolute;
+    top: calc(50% + 4rem); /* Abstand unterhalb des Logos */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 2;
+    text-align: center;
+    pointer-events: none;
+}
+
+.slogan {
+    font-size: 2.2rem;
+    line-height: 1.4;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+
 
         .footer-links span {
             color: var(--light-gray);
@@ -732,14 +763,19 @@
                 <a href="#kontakt" class="cta-button">Kontaktformular</a>
                 <a href="#kontaktdaten" class="cta-button">Kontaktdaten</a>
             </div>
-            <div class="logo">
-                <span id="eu">eu</span>
-                <span id="bau">bau</span>
-                <span id="ka">ka</span>
+            <div class="logo-wrapper">
+                <div class="logo">
+                    <span id="eu">eu</span>
+                    <span id="bau">bau</span>
+                    <span id="ka">ka</span>
+                </div>
             </div>
-            <h1 class="slogan">
-                <span>S</span><span>i</span><span>l</span><span>i</span><span>k</span><span>o</span><span>n</span><span>a</span><span>r</span><span>b</span><span>e</span><span>i</span><span>t</span><span>e</span><span>n</span><span> </span><span>m</span><span>i</span><span>t</span><span> </span><span>P</span><span>r</span><span>ä</span><span>z</span><span>i</span><span>s</span><span>i</span><span>o</span><span>n</span>
-            </h1>
+            <div class="slogan-wrapper">
+                <h1 class="slogan">
+                    <span>S</span><span>i</span><span>l</span><span>i</span><span>k</span><span>o</span><span>n</span><span>a</span><span>r</span><span>b</span><span>e</span><span>i</span><span>t</span><span>e</span><span>n</span><span>&nbsp;</span><span>m</span><span>i</span><span>t</span><span>&nbsp;</span><span>P</span><span>r</span><span>ä</span><span>z</span><span>i</span><span>s</span><span>i</span><span>o</span><span>n</span>
+                </h1>
+            </div>
+            
         </section>
         <section class="section about-section">
             <div style="max-width: 90%; margin: 2rem auto;">
