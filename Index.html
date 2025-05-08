@@ -459,7 +459,7 @@
             width: 100%;
             max-width: 500px;
             margin: 0 auto;
-            min-height: calc(100vh - 120px); /* Adjusted for taller footer */
+            min-height: calc(100vh - 100px); /* Ensure enough height for content and footer */
         }
 
         .euka-logo-container {
@@ -540,14 +540,6 @@
             text-decoration: none !important;
         }
 
-        @media (max-width: 480px) {
-            footer {
-                padding: 2.2rem 1rem 3.5rem; /* oben, seitlich, unten */
-                min-height: 100px;
-                position: relative; /* besser als absolute bei sticky Safari-UI */
-            }
-        }
-
         @media (max-width: 1024px) {
             .logo { font-size: 4rem; }
             #bau { font-size: 0.7rem; }
@@ -558,7 +550,7 @@
             }
             .service-section h2 { font-size: 2.25rem; }
             .service-section p { font-size: 1.1rem; }
-            footer { padding: 2.2rem 1rem; } /* Increased footer height */
+            footer { padding: 2rem 1rem; }
             footer p { font-size: 1.1rem; }
             .footer-links a { font-size: 1rem; }
             .footer-links span { font-size: 1rem; }
@@ -573,9 +565,6 @@
             .cta-button {
                 padding: 0.4rem 0.8rem;
                 font-size: 0.8rem;
-            }
-            .contact-details-section-content {
-                min-height: calc(100vh - 100px); /* Adjusted for taller footer */
             }
         }
 
@@ -597,7 +586,7 @@
                 50% { clip-path: polygon(0 100%, 100% 10%, 100% 100%, 0 100%); }
             }
             footer {
-                padding: 1.8rem 1rem; /* Increased footer height */
+                padding: 1.5rem 1rem; /* Reduced padding to keep footer lower */
                 position: absolute;
                 bottom: 0;
                 width: 100%;
@@ -643,7 +632,7 @@
                 font-size: 0.7rem;
             }
             .contact-details-section-content {
-                min-height: calc(100vh - 90px); /* Adjusted for taller footer */
+                min-height: calc(100vh - 80px); /* Adjusted for smaller footer */
             }
         }
 
@@ -662,7 +651,7 @@
                 50% { clip-path: polygon(0 100%, 100% 5%, 100% 100%, 0 100%); }
             }
             footer {
-                padding: 1.5rem 1rem; /* Increased footer height */
+                padding: 1.2rem 1rem; /* Further reduced padding */
                 position: absolute;
                 bottom: 0;
                 width: 100%;
@@ -711,7 +700,7 @@
                 min-height: 100vh;
             }
             .contact-details-section-content {
-                min-height: calc(100vh - 80px); /* Adjusted for taller footer */
+                min-height: calc(100vh - 70px); /* Adjusted for smaller footer */
             }
         }
     </style>
