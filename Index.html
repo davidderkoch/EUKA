@@ -428,8 +428,10 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            padding: 4rem 1rem 0;
+            padding: 4rem 1rem;
             text-align: center;
+            position: relative;
+            padding-bottom: 25rem;
         }
 
         .contact-details {
@@ -452,16 +454,20 @@
         .contact-details-section-content {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             width: 100%;
             max-width: 500px;
             margin: 0 auto;
-            min-height: calc(100vh - 400px);
         }
 
-        .spacer {
-            flex-grow: 1;
+        .contact-details-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: calc(0);
+            background: transparent;
+            border: none;
         }
 
         .euka-logo-container {
@@ -469,8 +475,7 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            margin: auto 0;
-            margin-bottom: 2rem;
+            margin: 2rem 0;
         }
 
         .euka-logo {
@@ -573,8 +578,11 @@
                 padding: 0.4rem 0.8rem;
                 font-size: 0.8rem;
             }
-            .contact-details-section-content {
-                min-height: calc(100vh - 400px);
+            .contact-details-section {
+                padding: 3rem 1rem;
+            }
+            .contact-details-wrapper {
+                min-height: calc(100vh - 9.9rem);
             }
         }
 
@@ -585,12 +593,11 @@
             h2 { font-size: 1.5rem; }
             .section, .contact-section { padding: 3rem 1rem; }
             .contact-details-section {
-                padding: 4rem 1rem 20rem;
+                padding: 3rem 1rem;
                 min-height: 100vh;
             }
-            .contact-details-section-content {
-                min-height: calc(100vh - 350px);
-                padding-bottom: 3rem;
+            .contact-details-wrapper {
+                min-height: calc(100vh - 7.425rem);
             }
             .home-section::after { 
                 height: 50px; 
@@ -709,12 +716,11 @@
                 font-size: 0.6rem;
             }
             .contact-details-section {
-                padding: 3rem 1rem 0;
+                padding: 2rem 1rem;
                 min-height: 100vh;
             }
-            .contact-details-section-content {
-                min-height: calc(100vh - 300px);
-                padding-bottom: 3.5rem;
+            .contact-details-wrapper {
+                min-height: calc(100vh - 5.94rem);
             }
         }
     </style>
@@ -790,17 +796,19 @@
             </div>
         </section>
         <section class="section contact-details-section">
-            <div class="euka-logo-container">
-                <img src="eukalogo.png" alt="EUKA Logo" class="euka-logo">
-            </div>
             <div class="contact-details-section-content">
-                <div class="contact-details">
-                    <h3>Kontaktdaten</h3>
-                    <p><strong>EUKA Versiegelungstechnik</strong></p>
-                    <p>Eugen Karpez</p>
-                    <p>Ernethof 2, 77933 Lahr</p>
-                    <p>Telefon: +49 176 82059876</p>
-                    <p>E-Mail: euka77933lahr@gmail.com</p>
+                <div class="contact-details-wrapper">
+                    <div class="euka-logo-container">
+                        <img src="eukalogo.png" alt="EUKA Logo" class="euka-logo">
+                    </div>
+                    <div class="contact-details">
+                        <h3>Kontaktdaten</h3>
+                        <p><strong>EUKA Versiegelungstechnik</strong></p>
+                        <p>Eugen Karpez</p>
+                        <p>Ernethof 2, 77933 Lahr</p>
+                        <p>Telefon: +49 176 82059876</p>
+                        <p>E-Mail: euka77933lahr@gmail.com</p>
+                    </div>
                 </div>
             </div>
             <footer>
@@ -839,9 +847,8 @@
             autoScrolling: true,
             navigation: true,
             scrollingSpeed: 1000,
-            normalScrollThreshold: 10,
-            scrollOverflow: false,
-            anchors: ['home', 'about', 'fuge', 'abdichtung', 'aesthetik', 'glas', 'spezial', 'industrie', 'silikonbesandung', 'kontakt', 'kontaktdaten'],
+            scrollOverflow: true,
+            anchors: ['home', 'about', 'fuge', 'abdichtung', 'aesthetik', 'glas', 'spezial', 'silikonbesandung', 'industrie', 'kontakt', 'kontaktdaten'],
             navigationTooltips: ['', '', '', '', '', '', '', '', '', '', ''],
             showActiveTooltip: true,
             afterLoad: function(origin, destination, direction) {
