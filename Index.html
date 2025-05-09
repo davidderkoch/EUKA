@@ -97,24 +97,24 @@
 
         #eu {
             color: var(--gray);
-            animation: slideInLeft 6s ease-in-out infinite;
-            transform-origin: center;
+            opacity: 0; /* Start unsichtbar */
+            transform: translateX(-50vw) scaleY(1); /* Startposition */
         }
 
         #ka {
             color: var(--black);
-            animation: slideInRight 6s ease-in-out infinite;
-            transform-origin: center;
+            opacity: 0; /* Start unsichtbar */
+            transform: translateX(50vw) scaleY(1); /* Startposition */
         }
 
         #bau {
             font-size: 0.8rem;
             color: var(--gray);
-            animation: fadeInBau 6s ease-in-out infinite;
+            opacity: 0; /* Start unsichtbar */
+            transform: translate(-50%, -50%) scale(0.5); /* Startposition */
             position: absolute;
             top: 55%;
             left: 50%;
-            transform: translate(-50%, -50%);
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
@@ -127,8 +127,7 @@
             28% { transform: translateX(-16px) scaleY(1.1); }
             29% { transform: translateX(-14px) scaleY(1.1); }
             30% { transform: translateX(-15px) scaleY(1.1); opacity: 1; }
-            75% { transform: translateX(-15px) scaleY(1.1); opacity: 1; }
-            100% { transform: translateX(-50vw) scaleY(1); opacity: 0; }
+            100% { transform: translateX(-15px) scaleY(1.1); opacity: 1; }
         }
 
         @keyframes slideInRight {
@@ -140,16 +139,16 @@
             28% { transform: translateX(16px) scaleY(1.1); }
             29% { transform: translateX(14px) scaleY(1.1); }
             30% { transform: translateX(15px) scaleY(1.1); opacity: 1; }
-            75% { transform: translateX(15px) scaleY(1.1); opacity: 1; }
-            100% { transform: translateX(50vw) scaleY(1); opacity: 0; }
+            100% { transform: translateX(15px) scaleY(1.1); opacity: 1; }
         }
 
         @keyframes fadeInBau {
             0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
             25% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-            75% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-            100% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+            100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
         }
+
+        /* Animation wird per JavaScript gesteuert, keine direkte CSS-Klasse */
 
         .slogan {
             font-size: 2.2rem;
@@ -464,7 +463,6 @@
             }
         }
 
-
         .contact-details-wrapper {
             display: flex;
             flex-direction: column;
@@ -485,7 +483,6 @@
                 align-items: center;
             }
         }
-
 
         .euka-logo-container {
             display: flex;
@@ -590,44 +587,43 @@
         }
 
         @media (min-width: 1024px) {
-    .contact-details-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 50vw;         /* Ganze Bildschirmbreite */
-        max-width: none;
-        margin: 0;
-        padding: 0;           /* Kein Innenabstand */
-    }
+            .contact-details-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 50vw;
+                max-width: none;
+                margin: 0;
+                padding: 0;
+            }
 
-    .euka-logo-container {
-        justify-content: flex-start;
-        align-items: center;
-        display: flex;
-        width: auto;
-        margin: 0;
-        padding: 0;           /* Kein Innenabstand */
-    }
+            .euka-logo-container {
+                justify-content: flex-start;
+                align-items: center;
+                display: flex;
+                width: auto;
+                margin: 0;
+                padding: 0;
+            }
 
-    .contact-details {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        width: auto;
-        margin: 0;
-        padding: 0;           /* Kein Innenabstand */
-        text-align:right;
-    }
+            .contact-details {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                width: auto;
+                margin: 0;
+                padding: 0;
+                text-align: right;
+            }
 
-    .contact-details h3 {
-        margin-bottom: 1rem;
-    }
+            .contact-details h3 {
+                margin-bottom: 1rem;
+            }
 
-    .contact-details p {
-        margin-bottom: 0.5rem;
-    }
-}
-
+            .contact-details p {
+                margin-bottom: 0.5rem;
+            }
+        }
 
         @media (max-width: 1024px) {
             .logo { font-size: 4rem; }
@@ -814,7 +810,6 @@
                 padding: 3rem 0;
             }
         }
-
     </style>
 </head>
 <body>
@@ -941,6 +936,34 @@
             };
         }
 
+        // Funktion zum Zurücksetzen und Starten der Animationen
+        function triggerLogoAnimations() {
+            const eu = document.getElementById('eu');
+            const ka = document.getElementById('ka');
+            const bau = document.getElementById('bau');
+
+            // Zurücksetzen der Animationen
+            eu.style.animation = 'none';
+            ka.style.animation = 'none';
+            bau.style.animation = 'none';
+            eu.style.opacity = '0';
+            ka.style.opacity = '0';
+            bau.style.opacity = '0';
+            eu.style.transform = 'translateX(-50vw) scaleY(1)';
+            ka.style.transform = 'translateX(50vw) scaleY(1)';
+            bau.style.transform = 'translate(-50%, -50%) scale(0.5)';
+            
+            // Reflow auslösen
+            void eu.offsetWidth;
+            void ka.offsetWidth;
+            void bau.offsetWidth;
+
+            // Animationen starten
+            eu.style.animation = 'slideInLeft 6s ease-in-out forwards';
+            ka.style.animation = 'slideInRight 6s ease-in-out forwards';
+            bau.style.animation = 'fadeInBau 6s ease-in-out forwards';
+        }
+
         new fullpage('#fullpage', {
             autoScrolling: true,
             navigation: true,
@@ -950,17 +973,47 @@
             navigationTooltips: ['', '', '', '', '', '', '', '', '', '', ''],
             showActiveTooltip: true,
             afterLoad: function(origin, destination, direction) {
+                // Entferne active-Klasse von allen Sektionen
                 document.querySelectorAll('.service-section, .about-section, .contact-section, .contact-details-section').forEach(section => {
                     section.classList.remove('active');
                 });
+
+                // Füge active-Klasse zur aktuellen Sektion hinzu (außer home-section)
                 if (destination.item.classList.contains('service-section') || 
                     destination.item.classList.contains('about-section') || 
                     destination.item.classList.contains('contact-section') || 
                     destination.item.classList.contains('contact-details-section')) {
                     destination.item.classList.add('active');
                 }
+
+                // Starte Logo-Animationen, wenn die erste Seite betreten wird
+                if (destination.item.classList.contains('home-section')) {
+                    triggerLogoAnimations();
+                }
+            },
+            onLeave: function(origin, destination, direction) {
+                // Setze Logo-Elemente auf Startzustand zurück, wenn die erste Seite verlassen wird
+                if (origin.item.classList.contains('home-section')) {
+                    const eu = document.getElementById('eu');
+                    const ka = document.getElementById('ka');
+                    const bau = document.getElementById('bau');
+                    eu.style.animation = 'none';
+                    ka.style.animation = 'none';
+                    bau.style.animation = 'none';
+                    eu.style.opacity = '0';
+                    ka.style.opacity = '0';
+                    bau.style.opacity = '0';
+                    eu.style.transform = 'translateX(-50vw) scaleY(1)';
+                    ka.style.transform = 'translateX(50vw) scaleY(1)';
+                    bau.style.transform = 'translate(-50%, -50%) scale(0.5)';
+                }
             }
         });
+
+        // Initiale Animation beim Laden der Seite
+        if (document.querySelector('.home-section').classList.contains('fp-section')) {
+            triggerLogoAnimations();
+        }
 
         let lastScrollTime = 0;
         window.addEventListener('wheel', debounce((e) => {
