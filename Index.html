@@ -460,7 +460,7 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            max-width: 500px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
@@ -471,6 +471,14 @@
             min-height: calc(0);
             background: transparent;
             border: none;
+        }
+
+        .contact-details-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin: 2rem 0;
         }
 
         .euka-logo-container {
@@ -573,6 +581,38 @@
         .fp-watermark a {
             color: var(--light-gray) !important;
             text-decoration: none !important;
+        }
+
+        @media (min-width: 1024px) {
+            .contact-details-container {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                max-width: 1000px;
+                margin: 0 auto;
+                padding: 0 2rem;
+            }
+
+            .euka-logo-container {
+                justify-content: flex-start;
+                width: 50%;
+                margin: 0;
+            }
+
+            .contact-details {
+                width: 50%;
+                text-align: right;
+                margin: 0;
+            }
+
+            .contact-details h3 {
+                margin-bottom: 1rem;
+            }
+
+            .contact-details p {
+                margin-bottom: 0.5rem;
+            }
         }
 
         @media (max-width: 1024px) {
@@ -754,6 +794,12 @@
                 min-height: calc(100vh - 5.94rem);
             }
         }
+        @media (min-width: 1200px) {
+    footer {
+        padding: 3rem 0;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -833,16 +879,18 @@
         <section class="section contact-details-section">
             <div class="contact-details-section-content">
                 <div class="contact-details-wrapper">
-                    <div class="euka-logo-container">
-                        <img src="eukalogo.png" alt="EUKA Logo" class="euka-logo">
-                    </div>
-                    <div class="contact-details">
-                        <h3>Kontaktdaten</h3>
-                        <p><strong>EUKA Versiegelungstechnik</strong></p>
-                        <p>Eugen Karpez</p>
-                        <p>Ernethof 2, 77933 Lahr</p>
-                        <p>Telefon: +49 176 82059876</p>
-                        <p>E-Mail: euka77933lahr@gmail.com</p>
+                    <div class="contact-details-container">
+                        <div class="euka-logo-container">
+                            <img src="eukalogo.png" alt="EUKA Logo" class="euka-logo">
+                        </div>
+                        <div class="contact-details">
+                            <h3>Kontaktdaten</h3>
+                            <p><strong>EUKA Versiegelungstechnik</strong></p>
+                            <p>Eugen Karpez</p>
+                            <p>Ernethof 2, 77933 Lahr</p>
+                            <p>Telefon: +49 176 82059876</p>
+                            <p>E-Mail: euka77933lahr@gmail.com</p>
+                        </div>
                     </div>
                 </div>
             </div>
