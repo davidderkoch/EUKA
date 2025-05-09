@@ -672,11 +672,11 @@
             .slogan-wrapper { top: calc(50% + 3rem); }
             .section, .contact-section { padding: 3rem 1rem; }
             .contact-details-section {
-                padding: 3rem 1rem;
-                min-height: 100vh;
+                min-height: calc(100vh + 7.425rem); /* Berücksichtigt die Footer-Höhe */
+        padding-bottom: 7.425rem;
             }
             .contact-details-wrapper {
-                min-height: calc(100vh - 7.425rem);
+                min-height: calc(100vh);
             }
             .home-section::after { 
                 height: 50px; 
@@ -686,11 +686,10 @@
                 50% { clip-path: polygon(0 100%, 100% 10%, 100% 100%, 0 100%); }
             }
             footer {
-                padding: 7.425rem 1rem;
-                margin-bottom: 0;
-                position: absolute;
-                bottom: 0;
-                width: 100%;
+                padding: 7.425rem 1rem; /* Wie in deiner CSS definiert */
+        position: absolute;
+        bottom: 0;
+        width: 100%;
             }
             footer p { font-size: 1rem; }
             .footer-links a { font-size: 0.9rem; }
@@ -700,7 +699,9 @@
             .service-section p { font-size: 1rem; margin: 0 1rem; }
             .euka-logo { max-width: 150px; max-height: 150px; }
             .about-section { padding-right: 40px; }
-            .fp-watermark { font-size: 0.7rem !important; bottom: 45px !important; }
+            .fp-watermark { bottom: calc(7.425rem + 5px) !important; /* Abstand über dem Footer */
+        font-size: 0.7rem !important;
+        right: 10px !important; }
             form {
                 max-width: 350px;
                 margin: 0 1rem;
@@ -751,11 +752,10 @@
                 50% { clip-path: polygon(0 100%, 100% 5%, 100% 100%, 0 100%); }
             }
             footer {
-                padding: 5.94rem 1rem;
-                margin-bottom: 0;
-                position: absolute;
-                bottom: 0;
-                width: 100%;
+                padding: 5.94rem 1rem; /* Wie in deiner CSS definiert */
+        position: absolute;
+        bottom: 0;
+        width: 100%;
             }
             footer p { font-size: 0.9rem; }
             .footer-links a { font-size: 0.8rem; }
@@ -765,7 +765,9 @@
             .service-section p { font-size: 0.9rem; margin: 0 0.5rem; }
             .euka-logo { max-width: 120px; max-height: 120px; }
             .about-section { padding-right: 30px; }
-            .fp-watermark { font-size: 0.6rem !important; bottom: 40px !important; }
+            .fp-watermark { bottom: calc(5.94rem + 5px) !important; /* Abstand über dem Footer */
+        font-size: 0.6rem !important;
+        right: 10px !important; }
             form {
                 max-width: 280px;
                 margin: 0 1rem;
@@ -797,11 +799,11 @@
                 font-size: 0.6rem;
             }
             .contact-details-section {
-                padding: 2rem 1rem;
-                min-height: 100vh;
+                min-height: calc(100vh + 5.94rem); /* Berücksichtigt die reduzierte Footer-Höhe (5.94rem aus deiner CSS) */
+        padding-bottom: 5.94rem;
             }
             .contact-details-wrapper {
-                min-height: calc(100vh - 5.94rem);
+                min-height: calc(100vh);
             }
         }
         
