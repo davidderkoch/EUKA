@@ -79,76 +79,29 @@
             50% { clip-path: polygon(0 100%, 100% 20%, 100% 100%, 0 100%); }
         }
 
-        .logo {
-            display: flex;
-            align-content: center;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-            font-weight: 900;
-            z-index: 2;
-            position: relative;
-        }
-        .logo span {
-            font-family: 'Futura PT', sans-serif;
-            font-weight: 900;
-            display: inline-block;
-        }
-
-        #eu {
-            color: var(--gray);
-            opacity: 0; /* Start unsichtbar */
-            transform: translateX(-50vw) scaleY(1); /* Startposition */
-        }
-
-        #ka {
-            color: var(--black);
-            opacity: 0; /* Start unsichtbar */
-            transform: translateX(50vw) scaleY(1); /* Startposition */
-        }
-
-        #bau {
-            font-size: 0.8rem;
-            color: var(--gray);
-            opacity: 0; /* Start unsichtbar */
-            transform: translate(-50%, -50%) scale(0.5); /* Startposition */
+        .euka-logo-container {
             position: absolute;
-            top: 55%;
+            top: 50%;
             left: 50%;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        @keyframes slideInLeft {
-            0% { transform: translateX(-50vw) scaleY(1); opacity: 0; }
-            24% { transform: translateX(-15px) scaleY(1.1); opacity: 1; }
-            25% { transform: translateX(-15px) scaleY(1.1); opacity: 1; }
-            26% { transform: translateX(-17px) scaleY(1.1); }
-            27% { transform: translateX(-13px) scaleY(1.1); }
-            28% { transform: translateX(-16px) scaleY(1.1); }
-            29% { transform: translateX(-14px) scaleY(1.1); }
-            30% { transform: translateX(-15px) scaleY(1.1); opacity: 1; }
-            100% { transform: translateX(-15px) scaleY(1.1); opacity: 1; }
+        .euka-logo {
+            max-width: 300px;
+            max-height: 300px;
+            width: auto;
+            height: auto;
+            opacity: 0;
         }
 
-        @keyframes slideInRight {
-            0% { transform: translateX(50vw) scaleY(1); opacity: 0; }
-            24% { transform: translateX(15px) scaleY(1.1); opacity: 1; }
-            25% { transform: translateX(15px) scaleY(1.1); opacity: 1; }
-            26% { transform: translateX(17px) scaleY(1.1); }
-            27% { transform: translateX(13px) scaleY(1.1); }
-            28% { transform: translateX(16px) scaleY(1.1); }
-            29% { transform: translateX(14px) scaleY(1.1); }
-            30% { transform: translateX(15px) scaleY(1.1); opacity: 1; }
-            100% { transform: translateX(15px) scaleY(1.1); opacity: 1; }
+        .home-section.active .euka-logo {
+            animation: fadeInUp 0.8s ease-out forwards;
+            animation-delay: 0.2s;
         }
-
-        @keyframes fadeInBau {
-            0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
-            25% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-            100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-        }
-
-        /* Animation wird per JavaScript gesteuert, keine direkte CSS-Klasse */
 
         .slogan {
             font-size: 2.2rem;
@@ -186,7 +139,7 @@
         .slogan span:nth-child(16) { animation-delay: 1.7s; }
         .slogan span:nth-child(17) { animation-delay: 1.8s; }
         .slogan span:nth-child(18) { animation-delay: 1.9s; }
-        .slogan span:nth-child(19) { animation-delay: 2.0s; }
+        .slogoan span:nth-child(19) { animation-delay: 2.0s; }
         .slogan span:nth-child(20) { animation-delay: 2.1s; }
         .slogan span:nth-child(21) { animation-delay: 2.2s; }
         .slogan span:nth-child(22) { animation-delay: 2.3s; }
@@ -428,14 +381,15 @@
         }
 
         .contact-details-section {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            padding: 4rem 1rem;
-            text-align: center;
-            position: relative;
-            padding-bottom: 20rem;
-        }
+    display: flex;
+    justify-content: center;  /* vertikal */
+    align-items: center;      /* horizontal */
+    flex-direction: column;
+    text-align: center;
+    padding: 0;
+    min-height: 100vh;
+}
+
 
         .contact-details {
             max-width: 500px;
@@ -464,13 +418,17 @@
         }
 
         .contact-details-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: calc(0);
-            background: transparent;
-            border: none;
-        }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: transparent;
+    border: none;
+}
+
+
+        
 
         @media (min-width: 1200px) {
             .contact-details-container {
@@ -484,37 +442,15 @@
             }
         }
 
-        .euka-logo-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            margin: 2rem 0;
-        }
-
-        .euka-logo {
+        .contact-details-section .euka-logo {
             max-width: 200px;
             max-height: 200px;
-            width: auto;
-            height: auto;
             opacity: 0;
         }
 
         .contact-details-section.active .euka-logo {
             animation: fadeInUp 0.8s ease-out forwards;
             animation-delay: 1.2s;
-        }
-
-        .logo-wrapper {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 2;
-            width: 100vw;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
         .slogan-wrapper {
@@ -597,7 +533,7 @@
                 padding: 0;
             }
 
-            .euka-logo-container {
+            .contact-details-section .euka-logo-container {
                 justify-content: flex-start;
                 align-items: center;
                 display: flex;
@@ -614,6 +550,7 @@
                 margin: 0;
                 padding: 0;
                 text-align: right;
+                margin-bottom: 10rem;
             }
 
             .contact-details h3 {
@@ -626,8 +563,6 @@
         }
 
         @media (max-width: 1024px) {
-            .logo { font-size: 4rem; }
-            #bau { font-size: 0.7rem; }
             h1 { font-size: 2.25rem; }
             h2 { font-size: 1.75rem; }
             .home-section::after { 
@@ -664,8 +599,6 @@
         }
 
         @media (max-width: 768px) {
-            .logo { font-size: 3rem; }
-            #bau { font-size: 0.6rem; }
             h1 { font-size: 2rem; }
             h2 { font-size: 1.5rem; }
             .slogan { font-size: 1.5rem; }
@@ -735,8 +668,6 @@
         }
 
         @media (max-width: 480px) {
-            .logo { font-size: 2.5rem; }
-            #bau { font-size: 0.5rem; }
             h1 { font-size: 1.75rem; }
             h2 { font-size: 1.25rem; }
             .slogan { font-size: 1.2rem; }
@@ -819,12 +750,8 @@
                 <a href="#kontakt" class="cta-button">Kontaktformular</a>
                 <a href="#kontaktdaten" class="cta-button">Kontaktdaten</a>
             </div>
-            <div class="logo-wrapper">
-                <div class="logo">
-                    <span id="eu">eu</span>
-                    <span id="bau">bau</span>
-                    <span id="ka">ka</span>
-                </div>
+            <div class="euka-logo-container">
+                <img src="eukalogo.png" alt="EUKA Logo" class="euka-logo">
             </div>
             <div class="slogan-wrapper">
                 <h1 class="slogan">
@@ -887,32 +814,25 @@
             </div>
         </section>
         <section class="section contact-details-section">
-            <div class="contact-details-section-content">
-                <div class="contact-details-wrapper">
-                    <div class="contact-details-container">
-                        <div class="euka-logo-container">
-                            <img src="eukalogo.png" alt="EUKA Logo" class="euka-logo">
-                        </div>
-                        <div class="contact-details">
-                            <h3>Kontaktdaten</h3>
-                            <p><strong>EUKA Versiegelungstechnik</strong></p>
-                            <p>Eugen Karpez</p>
-                            <p>Ernethof 2, 77933 Lahr</p>
-                            <p>Telefon: +49 176 82059876</p>
-                            <p>E-Mail: euka77933lahr@gmail.com</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="contact-details-wrapper">
+              <div class="contact-details">
+                <h3>Kontaktdaten</h3>
+                <p><strong>EUKA Versiegelungstechnik</strong></p>
+                <p>Eugen Karpez</p>
+                <p>Ernethof 2, 77933 Lahr</p>
+                <p>Telefon: +49 176 82059876</p>
+                <p>E-Mail: euka77933lahr@gmail.com</p>
+              </div>
             </div>
             <footer>
-                <p>© 2025 EUKA Versiegelungstechnik. Alle Rechte vorbehalten.</p>
-                <div class="footer-links">
-                    <a href="datenschutz.html">Datenschutz</a>
-                    <span>|</span>
-                    <a href="impressum.html">Impressum</a>
-                </div>
+              <p>© 2025 EUKA Versiegelungstechnik. Alle Rechte vorbehalten.</p>
+              <div class="footer-links">
+                <a href="datenschutz.html">Datenschutz</a>
+                <span>|</span>
+                <a href="impressum.html">Impressum</a>
+              </div>
             </footer>
-        </section>
+          </section>          
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.js"></script>
@@ -934,34 +854,6 @@
                 clearTimeout(timeout);
                 timeout = setTimeout(later, wait);
             };
-        }
-
-        // Funktion zum Zurücksetzen und Starten der Animationen
-        function triggerLogoAnimations() {
-            const eu = document.getElementById('eu');
-            const ka = document.getElementById('ka');
-            const bau = document.getElementById('bau');
-
-            // Zurücksetzen der Animationen
-            eu.style.animation = 'none';
-            ka.style.animation = 'none';
-            bau.style.animation = 'none';
-            eu.style.opacity = '0';
-            ka.style.opacity = '0';
-            bau.style.opacity = '0';
-            eu.style.transform = 'translateX(-50vw) scaleY(1)';
-            ka.style.transform = 'translateX(50vw) scaleY(1)';
-            bau.style.transform = 'translate(-50%, -50%) scale(0.5)';
-            
-            // Reflow auslösen
-            void eu.offsetWidth;
-            void ka.offsetWidth;
-            void bau.offsetWidth;
-
-            // Animationen starten
-            eu.style.animation = 'slideInLeft 6s ease-in-out forwards';
-            ka.style.animation = 'slideInRight 6s ease-in-out forwards';
-            bau.style.animation = 'fadeInBau 6s ease-in-out forwards';
         }
 
         new fullpage('#fullpage', {
@@ -986,33 +878,32 @@
                     destination.item.classList.add('active');
                 }
 
-                // Starte Logo-Animationen, wenn die erste Seite betreten wird
+                // Starte Logo-Fade-In, wenn die erste Seite betreten wird
                 if (destination.item.classList.contains('home-section')) {
-                    triggerLogoAnimations();
+                    const logo = destination.item.querySelector('.euka-logo');
+                    logo.style.animation = 'none';
+                    logo.style.opacity = '0';
+                    void logo.offsetWidth;
+                    logo.style.animation = 'fadeInUp 0.8s ease-out forwards';
                 }
             },
             onLeave: function(origin, destination, direction) {
-                // Setze Logo-Elemente auf Startzustand zurück, wenn die erste Seite verlassen wird
+                // Setze Logo-Opacity zurück, wenn die erste Seite verlassen wird
                 if (origin.item.classList.contains('home-section')) {
-                    const eu = document.getElementById('eu');
-                    const ka = document.getElementById('ka');
-                    const bau = document.getElementById('bau');
-                    eu.style.animation = 'none';
-                    ka.style.animation = 'none';
-                    bau.style.animation = 'none';
-                    eu.style.opacity = '0';
-                    ka.style.opacity = '0';
-                    bau.style.opacity = '0';
-                    eu.style.transform = 'translateX(-50vw) scaleY(1)';
-                    ka.style.transform = 'translateX(50vw) scaleY(1)';
-                    bau.style.transform = 'translate(-50%, -50%) scale(0.5)';
+                    const logo = origin.item.querySelector('.euka-logo');
+                    logo.style.animation = 'none';
+                    logo.style.opacity = '0';
                 }
             }
         });
 
         // Initiale Animation beim Laden der Seite
         if (document.querySelector('.home-section').classList.contains('fp-section')) {
-            triggerLogoAnimations();
+            const logo = document.querySelector('.home-section .euka-logo');
+            logo.style.animation = 'none';
+            logo.style.opacity = '0';
+            void logo.offsetWidth;
+            logo.style.animation = 'fadeInUp 0.8s ease-out forwards';
         }
 
         let lastScrollTime = 0;
